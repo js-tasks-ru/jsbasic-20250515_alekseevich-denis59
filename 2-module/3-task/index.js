@@ -1,22 +1,18 @@
-function getNumberFromUser(numberOfValue) {
-    let num;
-    do {
-        num = prompt(`Введите ${numberOfValue} (только положительные числа):`, 0);
-        num = Number(num);
-    } while ( isNaN(num) || num === ''|| num < 0);
-    return num;
-}
-
 let calculator = {
-	read() {
-		this.value1 = getNumberFromUser(1);
-		this.value2 = getNumberFromUser(2);
-	},
-    sum(){
-    return this.value1 + this.value2;
+    a: 0,
+    b: 0,
+
+    read(a, b) {
+        this.a = a;
+        this.b = b;
     },
+
+    sum() {
+        return this.a + this.b;
+    },
+
     mul() {
-        return this.value1 * this.value2;
+        return this.a * this.b;
     },
 }
 
