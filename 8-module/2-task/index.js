@@ -49,4 +49,4 @@ export default class ProductGrid {
       this.inner.append(card.elem);
     }
   }
-};
+}

@@ -10,18 +10,18 @@ export default class Cart {
   }
 
   addProduct(product) {
-  if (!product) return;
-  let cartItem = this.cartItems.find(item => item.product.id === product.id);
-  if (cartItem) {
-    cartItem.count += 1;
-  } else {
-    cartItem = {
-      product,
-      count: 1
-    };
-    this.cartItems.push(cartItem);
-  }
-  this.onProductUpdate(cartItem);
+    if (!product) return;
+    let cartItem = this.cartItems.find(item => item.product.id === product.id);
+    if (cartItem) {
+      cartItem.count += 1;
+    } else {
+      cartItem = {
+        product,
+        count: 1
+      };
+      this.cartItems.push(cartItem);
+    }
+    this.onProductUpdate(cartItem);
   }
 
   updateProductCount(productId, amount) {
