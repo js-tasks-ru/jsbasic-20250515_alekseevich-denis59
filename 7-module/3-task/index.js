@@ -1,4 +1,4 @@
-class StepSlider {
+export default class StepSlider {
   constructor({ steps, value = 0 }) {
     this.steps = steps;
     this.value = value;
@@ -44,11 +44,12 @@ class StepSlider {
     let clickRelative = clickX / sliderRect.width;
     let approximateValue = clickRelative * this.segments;
     let newValue = Math.round(approximateValue);
-    let valuePercents = (this.value / this.segments) * 100;
 
     if (newValue === this.value) return;
 
     this.value = newValue;
+    let valuePercents = (this.value / this.segments) * 100;
+
     this.elem.querySelector('.slider__thumb').style.left = `${valuePercents}%`;
     this.elem.querySelector('.slider__progress').style.width = `${valuePercents}%`;
     this.elem.querySelector('.slider__value').textContent = this.value;
